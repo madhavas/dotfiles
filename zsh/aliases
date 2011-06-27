@@ -1,0 +1,5 @@
+#
+# Aliases
+#
+alias e=vim
+alias ge=gvim
