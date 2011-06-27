@@ -1,0 +1,29 @@
+#
+# $Header$
+#
+# PROMPTS
+# TIMEPROMPT and SIMPLEPROMPT
+#
+DEFAULTUSER='madhavas'
+export SIMPLEPROMPT="[%2c] %# "
+if [ $(whoami) != $DEFAULTUSER ]; then
+    export SIMPLEPROMPT="%n@%m $SIMPLEPROMPT"
+fi
+export TIMEPROMPT="[%D{%F %R}] %B$SIMPLEPROMPT%b"
+
+# Change this to TIMEPROMPT if you want time on by default
+export PROMPT=$SIMPLEPROMPT
+
+#
+# Turn TIMEPROMPT on and off
+# I turn it on when I am fixing things, useful for a timeline
+# May also use it to track time spent on something
+#
+alias timeon='export PROMPT=$TIMEPROMPT'
+alias timeoff='export PROMPT=$SIMPLEPROMPT'
+
+#
+# ENVIRONMENT
+#
+export EDITOR=vim
+alias e=gvim
